@@ -10,7 +10,15 @@
          type="text"
          class="form-control"
          placeholder="Enter your username"
-         v-model="credentials.identifier"
+         v-model="credentials.username"
+       >
+     </div>
+     <div class="form-group">
+       <input
+         type="email"
+         class="form-control"
+         placeholder="Enter your email"
+         v-model="credentials.email"
        >
      </div>
      <div class="form-group">
@@ -31,8 +39,9 @@
     data() {
       return {
         credentials: {
-          identifier: '',
-          password: ''
+          username: '',
+          email: '',
+          password: '',
         },
         error: '',
       }
@@ -40,11 +49,13 @@
     methods: {
       submit() {
         const credentials = {
-          identifier: this.credentials.identifier,
+          username: this.credentials.username,
+          email: this.credentials.email,
           password: this.credentials.password
-        }
+        };
 
-        auth.login_or_signup('signup', this, credentials, 'secretquote')
+//        auth.loginOrSignup('signup', this, credentials, 'secretquote');
+        auth.loginOrSignup('signup', this, credentials);
       }
     }
   }

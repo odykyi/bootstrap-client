@@ -18,17 +18,17 @@
 </template>
 
 <script>
-  import auth from '../auth'
+  import auth from '../auth';
   export default {
     data() {
       return {
-        user: auth.user
-      }
+        user: auth.user,
+      };
     },
     methods: {
       logout() {
-        auth.logout()
-      }
+        auth.logout();
+      },
     }
   }
 </script>

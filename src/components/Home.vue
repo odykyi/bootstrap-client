@@ -9,20 +9,21 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
 export default {
   data() {
     return {
-      quote: ''
-    }
+      quote: '',
+    };
   },
   methods: {
     getQuote() {
-      axios.get('http://localhost:3001/api/random-quote')
-        .then((response) => {
-          this.quote = response.data;
-        })
-        .catch((err) => console.log(err))
+//      axios.get('http://localhost:3001/api/random-quote')
+//      axios.get('http://localhost:1337')
+//        .then((response) => {
+//          this.quote = response.data;
+//        })
+//        .catch((err) => console.error(err));
     }
   }
 }

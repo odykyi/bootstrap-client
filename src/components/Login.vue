@@ -7,10 +7,10 @@
      </div>
      <div class="form-group">
        <input
-         type="text"
+         type="email"
          class="form-control"
-         placeholder="Enter your username"
-         v-model="credentials.identifier"
+         placeholder="Enter your email"
+         v-model="credentials.email"
        >
      </div>
      <div class="form-group">
@@ -26,25 +26,26 @@
  </template>
 
  <script>
-  import auth from '../auth'
+  import auth from '../auth';
   export default {
     data() {
       return {
         credentials: {
-          identifier: '',
+          email: '',
           password: ''
         },
-        error: ''
-      }
+        error: '',
+      };
     },
     methods: {
       submit() {
-        var credentials = {
-          identifier: this.credentials.identifier,
-          password: this.credentials.password
-        }
+        const credentials = {
+          identifier: this.credentials.email,
+          password: this.credentials.password,
+        };
 
-        auth.login_or_signup('login', this, credentials, 'secretquote')
+//        auth.loginOrSignup('login', this, credentials, 'secretquote');
+        auth.loginOrSignup('login', this, credentials);
       }
     }
   }
