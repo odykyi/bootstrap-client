@@ -10,7 +10,7 @@
          type="text"
          class="form-control"
          placeholder="Enter your username"
-         v-model="credentials.username"
+         v-model="credentials.identifier"
        >
      </div>
      <div class="form-group">
@@ -31,7 +31,7 @@
     data() {
       return {
         credentials: {
-          username: '',
+          identifier: '',
           password: ''
         },
         error: ''
@@ -40,7 +40,7 @@
     methods: {
       submit() {
         var credentials = {
-          username: this.credentials.username,
+          identifier: this.credentials.identifier,
           password: this.credentials.password
         }
 

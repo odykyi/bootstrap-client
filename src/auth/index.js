@@ -1,9 +1,9 @@
 import { router } from '../index';
-import axios from 'axios'
+import axios from 'axios';
 
-const API_URL = 'http://localhost:1337/'
-const LOGIN_URL = API_URL + 'sessions/create'
-const REGISTER_URL = API_URL + 'users/'
+const API_URL = 'http://localhost:1337/auth';
+const LOGIN_URL = `${API_URL}/local`;
+const REGISTER_URL = `${API_URL}/register`;
 
 export default {
   user: {
@@ -12,15 +12,15 @@ export default {
 
   login_or_signup(action, context, creds, redirect) {
     let url = '';
-    switch(action) {
+    switch (action) {
       case 'login':
-          url = LOGIN_URL;
-          break;
+        url = LOGIN_URL;
+        break;
       case 'signup':
-          url = REGISTER_URL;
-          break;
+        url = REGISTER_URL;
+        break;
       default:
-          url = LOGIN_URL;
+        url = LOGIN_URL;
     }
     axios.post(url, creds)
       .then((response) => {
@@ -32,8 +32,8 @@ export default {
           router.push(redirect);
         }
       }).catch((err) => {
-        context.error = err.response.data;
-      })
+      context.error = err.response.data;
+    })
   },
 
   logout() {
