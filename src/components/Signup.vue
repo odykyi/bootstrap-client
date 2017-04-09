@@ -34,7 +34,7 @@
           identifier: '',
           password: ''
         },
-        error: ''
+        error: '',
       }
     },
     methods: {
