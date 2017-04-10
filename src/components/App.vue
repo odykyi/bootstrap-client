@@ -6,7 +6,7 @@
           <li v-if="!user.authenticated"><router-link to="/home">Home</router-link></li>
           <li v-if="!user.authenticated"><router-link to="/login">Login</router-link></li>
           <li v-if="!user.authenticated"><router-link to="/signup">Sign Up</router-link></li>
-          <li v-if="user.authenticated"><router-link to="/secretquote">Secret Quote</router-link></li>
+          <li v-if="user.authenticated"><router-link to="/users">Users</router-link></li>
           <li v-if="user.authenticated" @click="logout()"><router-link to="/login">Logout</router-link></li>
         </ul>
       </div>

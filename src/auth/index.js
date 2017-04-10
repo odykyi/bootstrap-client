@@ -24,9 +24,7 @@ export default {
     }
     axios.post(url, creds)
       .then((response) => {
-        console.log('response', response)
-        console.log('response.data', response.data)
-        localStorage.setItem('id_token', response.data.id_token);
+        localStorage.setItem('token', response.data.token);
 
         this.user.authenticated = true;
 
@@ -42,12 +40,12 @@ export default {
   },
 
   logout() {
-    localStorage.removeItem('id_token');
+    localStorage.removeItem('token');
     this.user.authenticated = false;
   },
 
   checkAuth() {
-    const jwt = localStorage.getItem('id_token');
+    const jwt = localStorage.getItem('token');
 
     if (jwt) {
       this.user.authenticated = true;
@@ -58,7 +56,7 @@ export default {
 
   getAuthHeader() {
     return {
-      Authorization: `Bearer ${localStorage.getItem('id_token')}`,
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
     };
   },
 }

@@ -1,3 +1,4 @@
+console.log('BuildPath ' + __dirname + '/build/')
 module.exports = {
   // the main entry of our app
   entry: [

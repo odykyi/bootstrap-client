@@ -6,7 +6,7 @@ import axios from 'axios';
 import {
   App,
   Home,
-  // SecretQuote,
+  User,
   Signup,
   Login,
 } from './components';
@@ -22,7 +22,7 @@ Vue.use(VueRouter);
 
 const routes = [
   { path: '/home', component: Home },
-  // { path: '/secretquote', component: SecretQuote },
+  { path: '/users', component: User },
   { path: '/signup', component: Signup },
   { path: '/login', component: Login },
   { path: '*', redirect: '/home' },
