@@ -1,8 +1,8 @@
 import Vue from 'vue';
-
-import VueRouter from 'vue-router';
-import auth from './auth';
 import axios from 'axios';
+import VueRouter from 'vue-router';
+
+import auth from './auth';
 import {
   App,
   Home,
