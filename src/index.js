@@ -13,7 +13,29 @@ import {
 // if you want to use the standard this.$http as you used to do with VueResource
 // I don't like this approach so code uses axion directly though
 // Uncomment below and then replace in code "axios" with this.$http
-// Vue.prototype.$http = axios;
+// axios.defaults.transformRequest = [function (data) {
+//   // Do whatever you want to transform the data
+//   return data;
+// }]
+axios.defaults.transformResponse = [function (data) {
+  // Do whatever you want to transform the data
+  return JSON.parse(data).data || JSON.parse(data);
+}]
+// axios.defaults = {
+//   transformRequest: [function (data) {
+//     // Do whatever you want to transform the data
+//
+//     return data;
+//   }],
+//
+//   // `transformResponse` allows changes to the response data to be made before
+//   // it is passed to then/catch
+//   transformResponse: [function (data) {
+//     // Do whatever you want to transform the data
+//     return JSON.parse(data).data;
+//   }],
+// };
+Vue.prototype.$http = axios;
 
 // Check the users auth status when the app starts
 auth.checkAuth();

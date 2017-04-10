@@ -4,7 +4,6 @@ import User from './User.vue';
 import Signup from './Signup.vue';
 import Login from './Login.vue';
 
-
 export {
   App,
   Home,

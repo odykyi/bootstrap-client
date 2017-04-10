@@ -31,7 +31,6 @@
 
 <script>
 import auth from '../auth';
-import axios from 'axios';
 export default {
   data() {
     return {
@@ -40,19 +39,7 @@ export default {
   },
   methods: {
     getUsers() {
-      axios.get('http://localhost:1337/users', {
-        transformRequest: [function (data) {
-          // Do whatever you want to transform the data
-
-          return data;
-        }],
-
-        // `transformResponse` allows changes to the response data to be made before
-        // it is passed to then/catch
-        transformResponse: [function (data) {
-          // Do whatever you want to transform the data
-          return JSON.parse(data).data;
-        }],
+      this.$http.get('http://localhost:1337/users', {
         headers: auth.getAuthHeader()
       })
         .then((response) => {
