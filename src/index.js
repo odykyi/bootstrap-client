@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import Vue from 'vue';
 import axios from 'axios';
 import VueRouter from 'vue-router';
@@ -17,6 +18,7 @@ import {
 //   // Do whatever you want to transform the data
 //   return data;
 // }]
+_.merge({},{})
 axios.defaults.transformResponse = [function (data) {
   // Do whatever you want to transform the data
   return JSON.parse(data).data || JSON.parse(data);
