@@ -18,11 +18,13 @@ import {
 //   // Do whatever you want to transform the data
 //   return data;
 // }]
-_.merge({},{})
+// _.merge({},{})
+// debugger;
 axios.defaults.transformResponse = [function (data) {
   // Do whatever you want to transform the data
   return JSON.parse(data).data || JSON.parse(data);
-}]
+}];
+// axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:1337';
 // axios.defaults = {
 //   transformRequest: [function (data) {
 //     // Do whatever you want to transform the data

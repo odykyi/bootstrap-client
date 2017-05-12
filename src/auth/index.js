@@ -47,11 +47,7 @@ export default {
   checkAuth() {
     const jwt = localStorage.getItem('token');
 
-    if (jwt) {
-      this.user.authenticated = true;
-    } else {
-      this.user.authenticated = false;
-    }
+    this.user.authenticated = !!jwt;
   },
 
   getAuthHeader() {
@@ -59,4 +55,4 @@ export default {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     };
   },
-}
+};

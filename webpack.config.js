@@ -18,13 +18,13 @@ module.exports = {
   },
   module: {
     rules: [
-      {
-        test: /\.css$/,
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: 'css-loader',
-        }),
-      },
+      // {
+      //   test: /\.css$/,
+      //   loader: ExtractTextPlugin.extract({
+      //     fallbackLoader: 'style-loader',
+      //     loader: 'css-loader',
+      //   }),
+      // },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -50,33 +50,33 @@ module.exports = {
     //       nodir: true,
     //     }),
     // }),
-    new ExtractTextPlugin('[name].[contenthash].css'),
+    // new ExtractTextPlugin('[name].[contenthash].css'),
     // Make sure this is after ExtractTextPlugin!
-    new PurifyCSSPlugin({
-      // Give paths to parse for rules. These should be absolute!
-      paths: glob.sync(path.join(__dirname, '/index.html')),
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        screw_ie8: true,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        join_vars: true,
-      },
-      output: {
-        comments: false,
-      },
-      sourceMap: true,
-    }),
+    // new PurifyCSSPlugin({
+    //   // Give paths to parse for rules. These should be absolute!
+    //   paths: glob.sync(path.join(__dirname, '/index.html')),
+    // }),
+    // new webpack.LoaderOptionsPlugin({
+    //   minimize: true,
+    //   debug: false,
+    // }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     warnings: false,
+    //     screw_ie8: true,
+    //     conditionals: true,
+    //     unused: true,
+    //     comparisons: true,
+    //     sequences: true,
+    //     dead_code: true,
+    //     evaluate: true,
+    //     if_return: true,
+    //     join_vars: true,
+    //   },
+    //   output: {
+    //     comments: false,
+    //   },
+    //   sourceMap: true,
+    // }),
   ],
 };

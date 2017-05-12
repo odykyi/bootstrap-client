@@ -30,8 +30,9 @@
     "eslint-plugin-import": "^2.2.0",
     "lodash": "^4.17.4",
     "purecss": "^0.6.2",
-    "vue": "^2.1.10",
+    "vue": "^2.3.3",
     "vue-router": "^2.2.1",
+    "vue-server-renderer": "^2.3.3",
     "vue-template-compiler": "^2.1.10"
   },
   "description": "## Disclaimer This is just a reworked example of https://github.com/auth0-blog/vue-jwt-authentication for Vue 2 and Axios For original article or if you want Vue 1 version please navigate to: https://auth0.com/blog/build-an-app-with-vuejs/",
